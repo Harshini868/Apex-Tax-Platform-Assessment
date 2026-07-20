@@ -4,7 +4,7 @@ This document defines the visual design system tokens, behavioral language, stat
 
 ## 1. Visual & Behavioral Indicators (No Color Alone)
 
-To support accessibility (**WCAG 2.2 Level AA as an engineering objective** — targeted throughout implementation and checked with automated + manual passes per [[docs/QUALITY_GATES.md]]; not claimed as certified conformance before that testing occurs) and clarity, all states use a combination of **Color (Border/Background)**, **Icon (SVG, from a single consistent icon library — Lucide React, per [[docs/TECHNICAL_DECISIONS.md]])**, and **Text Labels**. Emoji characters are never used as production interface icons; every entry below names the SVG icon that replaces the emoji placeholder used in earlier drafts, and every icon-only control carries an accessible name (`aria-label` or adjacent visually-hidden text).
+To support accessibility (**WCAG 2.2 Level AA as an engineering objective** — targeted throughout implementation and checked with automated + manual passes per [[docs/FINAL_VALIDATION_REPORT.md]]; not claimed as certified conformance before that testing occurs) and clarity, all states use a combination of **Color (Border/Background)**, **Icon (SVG, from a single consistent icon library — Lucide React, per [[docs/TECHNICAL_DECISIONS.md]])**, and **Text Labels**. Emoji characters are never used as production interface icons; every entry below names the SVG icon that replaces the emoji placeholder used in earlier drafts, and every icon-only control carries an accessible name (`aria-label` or adjacent visually-hidden text).
 
 | State | Background / Border | Icon (SVG, Lucide) | Text Label / Tooltip | Behavior |
 | :--- | :--- | :--- | :--- | :--- |
@@ -68,7 +68,7 @@ To support keyboard-only operators (CPAs doing rapid entries):
 
 ## 5. Accessibility (A11y) Design Rules
 
-Target: **WCAG 2.2 Level AA**, treated as an engineering objective driving implementation and the checks in [[docs/QUALITY_GATES.md]] Gate 5 — not asserted as a certified conformance claim ahead of that testing.
+Target: **WCAG 2.2 Level AA**, treated as an engineering objective driving implementation and the checks in [[docs/FINAL_VALIDATION_REPORT.md]] — not asserted as a certified conformance claim ahead of that testing.
 
 1. **Contrast Ratio**: Text colors maintain at least a **4.5:1** contrast ratio against backgrounds (verified via CSS tooling).
 2. **Aria Attributes**: All interactive icons have `aria-label` tags (e.g., `<Lock aria-label="Locked field" />`), never bare emoji.

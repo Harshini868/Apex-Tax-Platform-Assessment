@@ -53,10 +53,10 @@ The app launches at `http://localhost:5173` in development. Use the **"Preview a
 | # | Challenge | Prototype Feature | Routes |
 | :-- | :--- | :--- | :--- |
 | 01 | Source Traceability | Per-field AI reasoning panel with source document name, highlight bbox, and formula breakdown | `/return/ret-john-miller-1040` |
-| 02 | Collaboration | Thread-based messages separated by visibility (client vs. firm-internal); real-time request status | `/return/ret-rostova-tech-1120s`, `/onboarding` |
+| 02 | Collaboration | Thread-based messages separated by visibility (client vs. firm-internal); in-memory request status updates | `/return/ret-rostova-tech-1120s`, `/onboarding` |
 | 03 | Where to Start | Role-specific dashboard with dominant action card routing to active onboarding step | `/dashboard/client` |
 | 04 | Getting Lost | Deep-link URL params (`?field=`, `?panel=`, `?step=`, `?request=`); document selection trail with connected-object breadcrumb | `/return/...`, `/onboarding` |
-| 05 | Role-Aware Experience | Read-only mode banner, locked field indicator, client tab isolation, role-switch combo box | All dashboards and workspaces |
+| 05 | Role-Aware Experience | Role-specific navigation and restricted controls, locked-field explanation, client tab isolation, and role-preview selector | All dashboards and workspaces |
 | 06 | Return Status | Milestone stepper with next-action owner; client-facing timeline hides internal audit logs | `/dashboard/client` |
 | 07 | Actionable Dashboard | Priority-scored reviewer queue with scope/status/severity/owner filters, search, and 25-row pagination | `/dashboard/reviewer` |
 | 08 | Clickable vs Editable | AI-generated field badges; Reviewer lock state; approval/correction decision workflow with checklist | `/return/ret-john-miller-1040`, `/return/ret-rostova-tech-1120s` |
@@ -89,7 +89,7 @@ The app launches at `http://localhost:5173` in development. Use the **"Preview a
 | Lint | `npm run lint` | 0 warnings, 0 errors (72 files, 95 rules) |
 | Vitest unit | `npm run test:run` | 130 / 130 passed |
 | Playwright E2E | `npm run test:e2e` | 23 / 23 passed |
-| Playwright axe | `npm run test:a11y` | 8 / 8 routes — 0 violations (WCAG 2.1 AA) |
+| Playwright axe | `npm run test:a11y` | 8 / 8 routes — 0 automated violations for the selected WCAG 2.1 A/AA rules |
 | Keyboard & responsive | Included in E2E | 5 viewports, skip link, focus order |
 
 ---
@@ -101,7 +101,7 @@ The app launches at `http://localhost:5173` in development. Use the **"Preview a
 - **Routing**: `createBrowserRouter` with nested layouts for `preparer`, `reviewer`, `client`, and `scale` views
 - **Data**: All fixtures are static TypeScript modules; no network requests at runtime
 - **Scale generator**: Deterministic linear-congruential generator seeded at `20260720` (`src/mock/generateScaleDataset.ts`)
-- **Accessibility**: WCAG 2.1 AA verified by `@axe-core/playwright` across 8 routes
+- **Accessibility**: Automated axe scans passed on 8 representative routes; keyboard, focus, and responsive smoke tests were also completed. This is not a formal WCAG conformance claim.
 
 ---
 
@@ -141,3 +141,13 @@ docs/evidence/final/  # 12 required screenshot PNGs
 - **Requirements audit**: [`docs/FINAL_REQUIREMENTS_AUDIT.md`](docs/FINAL_REQUIREMENTS_AUDIT.md)
 - **Screenshots**: [`docs/evidence/final/`](docs/evidence/final/)
 - **Scale validation**: [`docs/SCALE_VALIDATION.md`](docs/SCALE_VALIDATION.md)
+
+## Known Limitations
+
+- Secondary Client navigation is not gated until onboarding is complete; the primary guided onboarding action is fully interactive.
+- Request, question, and thread context is URL-backed, but a universal side-drawer navigation pattern across all workspaces is not implemented.
+- The connected-object trail is implemented in the scale Document Explorer but is not yet a universal navigation pattern throughout the application.
+- A combined firm-employee and personal-return identity switch is not implemented; the available role selector is a prototype preview control.
+- Role-specific navigation and action restrictions are implemented, but there is no universal permission-summary banner explicitly stating read-only or read-write access on every workspace.
+- Client progress milestones are read-only and do not open a per-milestone audit history.
+- AI conflict evidence is available through the evidence panel, but a separate warning-badge instruction popover is not implemented.

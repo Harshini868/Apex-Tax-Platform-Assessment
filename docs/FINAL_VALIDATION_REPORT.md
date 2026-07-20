@@ -65,9 +65,9 @@ This report summarizes the final quality gate validation evidence for the local 
 - **Command**: `npm run build`
 - **Result**: **PASS** (built in under 1 second).
 - **Asset breakdown**:
-  - `dist/index.html` : 0.46 kB
-  - `dist/assets/index-DzrZ9x2Y.css` : 52.21 kB (gzip: 9.11 kB)
-  - `dist/assets/index-B2YACNcS.js` : 466.90 kB (gzip: 122.14 kB)
+  - `dist/index.html` : 0.47 kB
+  - `dist/assets/index-DodPnvNa.css` : 51.77 kB (gzip: 9.03 kB)
+  - `dist/assets/index-BMuL6nJI.js` : 466.90 kB (gzip: 122.14 kB)
 - **Vite Chunk Warnings**: None (under the default 500 kB chunk warning threshold).
 - **Dependency Audit**: `npm audit --omit=dev` reports **0 vulnerabilities**.
 
@@ -94,7 +94,7 @@ All 12 screenshots have been generated from the production preview server and st
 ## 5. Security & Confidentiality Result
 
 - **Case Study PDF**: Ignored via `.gitignore` and confirmed completely absent from the git tracked tree (`git ls-files` returns 0 files).
-- **Git History Secrets**: Swiped and verified completely clean of API keys, passwords, private keys, or environment files.
+- **Git History**: The current submission tree excludes the source PDF and internal working documents. Earlier repository history requires a separate clean-history operation before final controlled sharing.
 - **Data Privacy**: No real user/client data, files, or OCR outputs are read, processed, or uploaded. Textual indicators explicitly note simulation status.
 
 ---

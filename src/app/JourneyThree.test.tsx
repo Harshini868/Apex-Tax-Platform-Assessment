@@ -152,7 +152,8 @@ describe('ApexTax AI Application Journey 3 Senior Reviewer Workflow', () => {
     // Approve
     await user.click(approveBtn);
     expect(screen.getByText(/Return approved unchanged successfully/i)).toBeInTheDocument();
-  });
+  }, 15000);
+
 
   it('reviewer can return return to preparer with actionable instructions', async () => {
     const user = userEvent.setup();

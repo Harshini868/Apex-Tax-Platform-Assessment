@@ -15,7 +15,7 @@ Provisional frontend-only stack for this prototype. No application code, package
 - Vitest
 - React Testing Library
 - Playwright
-- axe integration for automated accessibility checks (see [[docs/QUALITY_GATES.md]] Gate 5)
+- axe integration for automated accessibility checks (see [[docs/FINAL_VALIDATION_REPORT.md]] §2 Accessibility)
 
 **Exact package versions are not selected in this document.** Before scaffolding, run and record:
 ```
