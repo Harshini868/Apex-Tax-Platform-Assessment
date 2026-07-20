@@ -1,0 +1,32 @@
+# Exclude assessment files
+assessment/
+*.pdf
+
+# Environment files
+.env
+.env.*
+
+# Dependencies and build outputs
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.gemini/
+
+# Internal assessment planning and submission artifacts
+/docs/ASSESSMENT_BRIEF.md
+/docs/BLUEPRINT_AUDIT.md
+/docs/DELIVERY_PLAN.md
+/docs/EXECUTION_STATE.md
+/docs/HANDOFF_LOG.md
+/docs/JOURNEY_1_AUDIT.md
+/docs/JOURNEY_2_AUDIT.md
+/docs/JOURNEY_3_AUDIT.md
+/docs/RISK_REGISTER.md
+/docs/STEP_7_SCALE_AUDIT.md
+/docs/SUBMISSION_CHECKLIST.md
+/docs/SUBMISSION_EMAIL_DRAFT.md
+/step7_status.md
+
+/docs/SCALE_AND_GAP_PLAN.md

@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-app-bg: #0b0f19;
+  --color-surface-bg: #111827;
+  --color-surface-elevated-bg: #1f2937;
+  
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #9ca3af;
+  --color-border-custom: #374151;
+  
+  --color-primary-action: #1d4ed8;
+  --color-primary-action-text: #60a5fa;
+  --color-primary-emphasis-text: #60a5fa;
+  --color-focus-indicator: #93c5fd;
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  --color-ai-bg: #1e1b4b;
+  --color-ai-border: #a855f7;
+  --color-ai-text: #e9d5ff;
+  
+  --color-locked-bg: #1f2937;
+  --color-locked-border: #4b5563;
+  --color-locked-text: #6b7280;
+
+  --radius-custom-sm: 4px;
+  --radius-custom-md: 8px;
+  --radius-custom-lg: 12px;
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    min-height: 100vh;
+    background-color: var(--color-app-bg);
+    color: var(--color-text-primary);
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Custom focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-focus-indicator);
+  outline-offset: 2px;
+}
+
+/* Accessibility skip link styles */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-primary-action);
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
