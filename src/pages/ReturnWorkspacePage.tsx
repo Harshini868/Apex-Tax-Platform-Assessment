@@ -176,7 +176,7 @@ export const ReturnWorkspacePage: React.FC = () => {
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Column A: Outline Selector (4 spans) */}
-          <section className="lg:col-span-4 h-[calc(100vh-280px)] min-h-[500px]" aria-label="Return Forms Checklist Outline">
+          <section className="lg:col-span-4 lg:h-[calc(100vh-280px)] min-h-[400px]" aria-label="Return Forms Checklist Outline">
             <ReturnOutline
               curatedReturn={activeReturn}
               selectedFieldId={selectedFieldId}

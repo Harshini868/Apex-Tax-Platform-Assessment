@@ -12,7 +12,12 @@ import {
   Settings,
 } from 'lucide-react';
 
-export const AppNavigation: React.FC = () => {
+interface AppNavigationProps {
+  onNavClick?: () => void;
+  isMobileDrawer?: boolean;
+}
+
+export const AppNavigation: React.FC<AppNavigationProps> = ({ onNavClick, isMobileDrawer = false }) => {
   const { state } = useApp();
   const isClient = state.currentRole === 'client';
 
@@ -65,13 +70,18 @@ export const AppNavigation: React.FC = () => {
 
   const activeNavItems = isClient ? clientNavItems : staffNavItems;
 
+  const containerClasses = isMobileDrawer
+    ? 'w-full py-2 flex flex-col justify-between'
+    : 'desktop-nav-sidebar w-64 border-r border-[var(--color-border-custom)] bg-[var(--color-surface-bg)] py-6 flex-col justify-between flex-shrink-0';
+
   return (
-    <nav className="w-64 border-r border-[var(--color-border-custom)] bg-[var(--color-surface-bg)] py-6 flex flex-col justify-between" aria-label="Main Navigation">
-      <div className="space-y-1 px-4">
+    <nav className={containerClasses} aria-label="Main Navigation">
+      <div className="space-y-1 px-2 md:px-4">
         {activeNavItems.map((item) => (
           <NavLink
             key={item.name}
             to={item.path}
+            onClick={() => onNavClick?.()}
             end={item.path.endsWith('/summary') || item.path.endsWith('/documents') ? false : true}
             className={({ isActive }) =>
               `flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
@@ -87,9 +97,10 @@ export const AppNavigation: React.FC = () => {
         ))}
       </div>
 
-      <div className="px-4">
+      <div className="px-2 md:px-4 mt-6">
         <NavLink
           to="/settings"
+          onClick={() => onNavClick?.()}
           className={({ isActive }) =>
             `flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
               isActive

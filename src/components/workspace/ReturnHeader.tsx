@@ -59,7 +59,7 @@ export const ReturnHeader: React.FC<ReturnHeaderProps> = ({ curatedReturn }) => 
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           {/* Status Badge */}
           <div className="flex items-center gap-2 rounded-md bg-[var(--color-surface-elevated-bg)] px-3 py-1.5 border border-[var(--color-border-custom)]">
             <PlayCircle className="h-4 w-4 text-[var(--color-primary-action)]" />

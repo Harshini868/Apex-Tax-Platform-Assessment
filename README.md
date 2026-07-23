@@ -10,6 +10,24 @@ This prototype demonstrates a multi-role, AI-assisted tax return review platform
 
 ---
 
+## Live Demo
+
+**Production Deployment**: [https://apex-tax-platform-assessment.pages.dev/](https://apex-tax-platform-assessment.pages.dev/)
+
+All identities, documents, tax data, uploaded-file metadata, and AI outputs shown in this prototype are fictional and simulated.
+
+### Direct Workflow Links
+
+- **Client dashboard**: [https://apex-tax-platform-assessment.pages.dev/dashboard/client](https://apex-tax-platform-assessment.pages.dev/dashboard/client)
+- **Client onboarding**: [https://apex-tax-platform-assessment.pages.dev/onboarding?step=required-information&request=req-john-w2](https://apex-tax-platform-assessment.pages.dev/onboarding?step=required-information&request=req-john-w2)
+- **Preparer traceability**: [https://apex-tax-platform-assessment.pages.dev/return/ret-john-miller-1040?field=f1040-line1z](https://apex-tax-platform-assessment.pages.dev/return/ret-john-miller-1040?field=f1040-line1z)
+- **Reviewer workflow**: [https://apex-tax-platform-assessment.pages.dev/dashboard/reviewer](https://apex-tax-platform-assessment.pages.dev/dashboard/reviewer)
+- **Scale dashboard**: [https://apex-tax-platform-assessment.pages.dev/dashboard/reviewer?dataset=scale](https://apex-tax-platform-assessment.pages.dev/dashboard/reviewer?dataset=scale)
+- **Document Explorer**: [https://apex-tax-platform-assessment.pages.dev/return/ret-rostova-tech-1120s/documents?dataset=scale](https://apex-tax-platform-assessment.pages.dev/return/ret-rostova-tech-1120s/documents?dataset=scale)
+- **Dual-source evidence**: [https://apex-tax-platform-assessment.pages.dev/return/ret-rostova-tech-1120s?field=rostova-interest-expense&panel=evidence](https://apex-tax-platform-assessment.pages.dev/return/ret-rostova-tech-1120s?field=rostova-interest-expense&panel=evidence)
+
+---
+
 ## Quick Start
 
 **Prerequisites**: Node.js ≥ 20 LTS, npm ≥ 10.

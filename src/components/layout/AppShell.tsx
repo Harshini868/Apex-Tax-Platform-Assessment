@@ -14,7 +14,7 @@ export const AppShell: React.FC = () => {
         <main
           id="main-content"
           tabIndex={-1}
-          className="flex-1 overflow-y-auto bg-[var(--color-app-bg)] p-8 focus:outline-none"
+          className="flex-1 overflow-y-auto bg-[var(--color-app-bg)] p-4 sm:p-6 lg:p-8 focus:outline-none"
         >
           <div className="mx-auto max-w-7xl">
             <Outlet />

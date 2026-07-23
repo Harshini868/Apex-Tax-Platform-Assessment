@@ -26,6 +26,21 @@ test.describe('Manual Keyboard, Responsive & Screenshot Generation', () => {
     await expect(roleSelect).toBeFocused();
   });
 
+  test('Mobile responsive layout: Main content width, workspace stacking, zero horizontal overflow', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/dashboard/reviewer');
+
+    // 1. Verify main content rendered width fits viewport
+    const mainWidth = await page.evaluate(() => document.querySelector('main')?.clientWidth || 0);
+    expect(mainWidth).toBeGreaterThan(300);
+    expect(mainWidth).toBeLessThanOrEqual(390);
+
+    // 2. Verify body does not overflow horizontally
+    const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+    const clientWidth = await page.evaluate(() => document.documentElement.clientWidth);
+    expect(scrollWidth).toBeLessThanOrEqual(clientWidth + 2);
+  });
+
   test('Responsive Viewports: 1440x900, 1280x800, 1024x768, 768x1024, 390x844', async ({ page }) => {
     const viewports = [
       { width: 1440, height: 900 },

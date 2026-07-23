@@ -64,3 +64,22 @@
 .skip-link:focus {
   top: 0;
 }
+
+/* Responsive navigation drawer utilities */
+@media (max-width: 767px) {
+  .mobile-nav-trigger {
+    display: flex !important;
+  }
+  .desktop-nav-sidebar {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-nav-trigger {
+    display: none !important;
+  }
+  .desktop-nav-sidebar {
+    display: flex !important;
+  }
+}
