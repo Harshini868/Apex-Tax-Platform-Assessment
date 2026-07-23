@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { useApp } from '../../context/AppContext';
 import type { PreviewRole } from '../../types/roles';
 import { User, Eye, Menu, X } from 'lucide-react';
+import { AppNavigation } from './AppNavigation';
 
 export const AppHeader: React.FC = () => {
   const { state, setRole } = useApp();
